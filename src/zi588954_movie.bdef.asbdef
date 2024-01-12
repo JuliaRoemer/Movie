@@ -1,0 +1,27 @@
+managed;
+
+define behavior for ZI588954_Movie //alias <alias_name>
+persistent table zabap_movie_a
+lock master
+//authorization master ( instance )
+//etag master <field_name>
+{
+  create;
+  update;
+  delete;
+  field ( readonly, numbering: managed ) MovieUuid;
+  association _Rating { create; }
+}
+
+define behavior for ZI588954_Rating //alias <alias_name>
+persistent table zabap_rating_a
+lock dependent by _Movie
+//authorization dependent by _Movie
+//etag master <field_name>
+{
+  update;
+  delete;
+  field ( readonly ) MovieUuid;
+  field ( readonly, numbering: managed ) RatingUuid;
+  association _Movie;
+}

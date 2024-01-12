@@ -1,0 +1,51 @@
+@Metadata.layer: #CUSTOMER
+@UI.headerInfo:
+{
+      typeNamePlural: 'Movie',
+      title.value: 'Title',
+      description.value: 'Genre',
+      imageUrl: 'ImageUrl'
+}
+annotate view ZC588954_Movie with
+{
+  @UI.facet:
+  [
+    { position: 10, label: 'Movie Details', type: #FIELDGROUP_REFERENCE, targetQualifier: 'Details' },
+    { position: 20, label: 'Creation and Editing', type: #FIELDGROUP_REFERENCE, targetQualifier: 'Editing' },
+    { position: 30, label: 'Rating', type: #LINEITEM_REFERENCE, targetElement: '_Rating' }
+  ]
+
+  /*Fields*/
+  @UI.lineItem: [{ position: 100 }]
+  @UI.fieldGroup: [{ qualifier: 'Details', position: 100 }]
+  MovieUuid;
+  @UI.lineItem: [{ position: 10 }]
+  @UI.fieldGroup: [{ qualifier: 'Bild', position: 10 }]
+  ImageUrl;
+  @UI.lineItem: [{ position: 20 }]
+  @UI.selectionField: [{ position: 10 }]
+  @UI.fieldGroup: [{ qualifier: 'Details', position: 20 }]
+  Title;
+  @UI.lineItem: [{ position: 30 }]
+  @UI.selectionField: [{ position: 20 }]
+  @UI.fieldGroup: [{ qualifier: 'Details', position: 30 }]
+  Genre;
+  @UI.lineItem: [{ position: 40 }]
+  @UI.fieldGroup: [{ qualifier: 'Details', position: 40 }]
+  PublishingYear;
+  @UI.lineItem: [{ position: 50 }]
+  @UI.fieldGroup: [{ qualifier: 'Details', position: 50 }]
+  RuntimeInMin;
+  @UI.lineItem: [{ position: 60 }]
+  @UI.fieldGroup: [{ qualifier: 'Editing', position: 60 }]
+  CreatedAt;
+  @UI.lineItem: [{ position: 70 }]
+  @UI.fieldGroup: [{ qualifier: 'Editing', position: 70 }]
+  CreatedBy;
+  @UI.lineItem: [{ position: 80 }]
+  @UI.fieldGroup: [{ qualifier: 'Editing', position: 80 }]
+  LastChangedAt;
+  @UI.lineItem: [{ position: 90 }]
+  @UI.fieldGroup: [{ qualifier: 'Editing', position: 90 }]
+  LastChangedBy;
+}

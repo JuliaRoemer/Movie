@@ -1,0 +1,5 @@
+@EndUserText.label: 'Movie'
+define service ZC588954_MOVIE {
+  expose ZC588954_Movie  as Movie;
+  expose ZC588954_Rating as Rating;
+}
